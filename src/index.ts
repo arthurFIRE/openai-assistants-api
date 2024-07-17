@@ -6,10 +6,10 @@ import { log } from "console";
 config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const openai = new OpenAI();
-const assistantId = process.env.OPENAI_ASSISTANT_ID;
+const assistantId = process.env.OPENAI_ASSISTANT_ID || "";
 console.log("assistantId", assistantId);
 
 app.use(json());
@@ -24,6 +24,8 @@ app.use((req, res, next) => {
 
   next();
 });
+
+app.get("/", (req, res) => res.send("Hello World!"));
 
 app.post("/api/assistants/threads", async (req, res) => {
   try {
