@@ -6,7 +6,7 @@ import { log } from "console";
 config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 const openai = new OpenAI();
 const assistantId = process.env.OPENAI_ASSISTANT_ID || "";

@@ -40,7 +40,7 @@ const openai_1 = __importDefault(require("openai"));
 const dotenv_1 = require("dotenv");
 (0, dotenv_1.config)();
 const app = (0, express_1.default)();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 const openai = new openai_1.default();
 const assistantId = process.env.OPENAI_ASSISTANT_ID || "";
 console.log("assistantId", assistantId);
